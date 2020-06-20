@@ -1,0 +1,14 @@
+{% extends 'app/base.html'%}
+{% load crispy_forms_tags %}
+{% block title%} Vrform Page {% endblock %}
+
+{% block div1 %}
+	<h1>Create Your Post</h1>
+	<div class="form">
+	<form method="POST" action="{% url 'addpost' %}">
+		{% csrf_token %}
+		{{form| crispy}}
+		<input type="submit" name="submit" value="PostNow">
+	</form>
+	</div>
+{%endblock%}
